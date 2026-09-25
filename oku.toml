@@ -1,2 +1,6 @@
 [packages]
 tea = "gitea:gitea.com/gitea/tea"
+repomix = "npm:repomix"
+
+[runtimes]
+node = "./node.toml"

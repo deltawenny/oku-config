@@ -3,6 +3,45 @@
 include = []
 
 [[package]]
+name = 'repomix'
+ref = 'npm:repomix'
+manifest_sha256 = '5f3319c7827cbac231701517de1f7beea54b639da3d00423c14eb35bbb24abde'
+version = '1.18.1'
+inferred = true
+manifest = "[package]\nname = \"repomix\"\nhomepage = \"https://www.npmjs.com/package/repomix\"\n\n[version]\nfrom = \"npm\"\nrepo = \"repomix\"\n\n[runtime]\ndeps = [\"./node.toml\"]\n\n[build]\ndeps = [\"./node.toml\"]\n\n[[build.step]]\nvendor = \"npm\"\npackage = \"repomix\"\n\n[[build.step]]\ninstall = { bin = [\n  { name = \"repomix\", run = \"{{dep.node.prefix}}/bin/node\", args = [\"{{prefix}}/lib/node_modules/repomix/bin/repomix.cjs\"] },\n] }\n"
+
+[package.platform]
+[package.platform.linux-amd64-glibc]
+strategy = 'build'
+vendor_sha256 = '8f3a5b01ec03d8489320f283e9863c3b8beb632acf5c0377a08ed61584dc7acc'
+
+[[package.dep]]
+name = 'node'
+ref = './node.toml'
+manifest_sha256 = '2573401691743e18fd574b12dae7397c4cea361ffa519d251194d9463793802b'
+version = '26.10.0'
+tag = 'v26.10.0'
+
+[package.dep.platform]
+[package.dep.platform.linux-amd64-glibc]
+strategy = 'artifact'
+url = 'https://nodejs.org/dist/v26.10.0/node-v26.10.0-linux-x64.tar.gz'
+sha256 = 'cb5c9ce9c80d7b8821e3a258543c71b939138cf17c74d5cc44bbe85d6dbc5ad8'
+
+[[package.dep]]
+name = 'node'
+ref = './node.toml'
+manifest_sha256 = '2573401691743e18fd574b12dae7397c4cea361ffa519d251194d9463793802b'
+version = '26.10.0'
+tag = 'v26.10.0'
+
+[package.dep.platform]
+[package.dep.platform.linux-amd64-glibc]
+strategy = 'artifact'
+url = 'https://nodejs.org/dist/v26.10.0/node-v26.10.0-linux-x64.tar.gz'
+sha256 = 'cb5c9ce9c80d7b8821e3a258543c71b939138cf17c74d5cc44bbe85d6dbc5ad8'
+
+[[package]]
 name = 'tea'
 ref = 'gitea:gitea.com/gitea/tea'
 commit = '9c12138d6273ba8feb6e7578833cc330c0cd6461'
