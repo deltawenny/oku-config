@@ -1,0 +1,16 @@
+[package]
+name = "throne"
+description = "Qt based cross-platform GUI proxy configuration manager (backend: sing-box)"
+homepage = "https://github.com/throneproj/Throne"
+
+[version]
+from = "github-releases"
+repo = "throneproj/Throne"
+latest = true
+
+# -appdata keeps the config in ~/.config/Throne, the store is read-only
+[[artifact]]
+match = { os = "linux", arch = "amd64" }
+url = "https://github.com/throneproj/Throne/releases/download/{{tag}}/Throne-{{version}}-linux-amd64.zip"
+bin = [{ name = "throne", run = "{{pkg}}/Throne/Throne", args = ["-appdata"] }]
+app = [{ path = "throne", name = "Throne", icon = "Throne/Throne.png" }]

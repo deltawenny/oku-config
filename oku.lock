@@ -1,23 +1,25 @@
 # Written by oku. Commit this file, and change it with oku commands only.
 
-include = []
+[[include]]
+ref = './lists/packages.toml'
+sha256 = ''
 
 [[package]]
 name = 'repomix'
 ref = 'npm:repomix'
-manifest_sha256 = '5f3319c7827cbac231701517de1f7beea54b639da3d00423c14eb35bbb24abde'
+manifest_sha256 = 'ac2a9bec300ac9b3c091c3aebf7646f774b1b148fed9bfe61ae73e4253bf036b'
 version = '1.18.1'
 inferred = true
-manifest = "[package]\nname = \"repomix\"\nhomepage = \"https://www.npmjs.com/package/repomix\"\n\n[version]\nfrom = \"npm\"\nrepo = \"repomix\"\n\n[runtime]\ndeps = [\"./node.toml\"]\n\n[build]\ndeps = [\"./node.toml\"]\n\n[[build.step]]\nvendor = \"npm\"\npackage = \"repomix\"\n\n[[build.step]]\ninstall = { bin = [\n  { name = \"repomix\", run = \"{{dep.node.prefix}}/bin/node\", args = [\"{{prefix}}/lib/node_modules/repomix/bin/repomix.cjs\"] },\n] }\n"
+manifest = "[package]\nname = \"repomix\"\nhomepage = \"https://www.npmjs.com/package/repomix\"\n\n[version]\nfrom = \"npm\"\nrepo = \"repomix\"\n\n[runtime]\ndeps = [\"./packages/node.toml\"]\n\n[build]\ndeps = [\"./packages/node.toml\"]\n\n[[build.step]]\nvendor = \"npm\"\npackage = \"repomix\"\n\n[[build.step]]\ninstall = { bin = [\n  { name = \"repomix\", run = \"{{dep.node.prefix}}/bin/node\", args = [\"{{prefix}}/lib/node_modules/repomix/bin/repomix.cjs\"] },\n] }\n"
 
 [package.platform]
 [package.platform.linux-amd64-glibc]
 strategy = 'build'
-vendor_sha256 = '8f3a5b01ec03d8489320f283e9863c3b8beb632acf5c0377a08ed61584dc7acc'
+vendor_sha256 = '768754f388d51640d1b76a27aa6692601be7b962f8a65f429d839bd73e3c5629'
 
 [[package.dep]]
 name = 'node'
-ref = './node.toml'
+ref = './packages/node.toml'
 manifest_sha256 = '2573401691743e18fd574b12dae7397c4cea361ffa519d251194d9463793802b'
 version = '26.10.0'
 tag = 'v26.10.0'
@@ -30,7 +32,7 @@ sha256 = 'cb5c9ce9c80d7b8821e3a258543c71b939138cf17c74d5cc44bbe85d6dbc5ad8'
 
 [[package.dep]]
 name = 'node'
-ref = './node.toml'
+ref = './packages/node.toml'
 manifest_sha256 = '2573401691743e18fd574b12dae7397c4cea361ffa519d251194d9463793802b'
 version = '26.10.0'
 tag = 'v26.10.0'
@@ -45,14 +47,26 @@ sha256 = 'cb5c9ce9c80d7b8821e3a258543c71b939138cf17c74d5cc44bbe85d6dbc5ad8'
 name = 'tea'
 ref = 'gitea:gitea.com/gitea/tea'
 commit = '9c12138d6273ba8feb6e7578833cc330c0cd6461'
-manifest_sha256 = '664111dc434e3129b0a73e3a34bef037eb3762736b56d83034d7aa6b5fa6d195'
+manifest_sha256 = '9e6b3d33299ac1999e565356de7141346ca299e80bacfdeb623e5898a1441f2a'
 version = '0.16.0'
 tag = 'v0.16.0'
 inferred = true
-manifest = "[package]\nname = \"tea\"\nhomepage = \"https://gitea.com/gitea/tea\"\n\n[version]\nfrom = \"gitea-releases\"\nrepo = \"gitea.com/gitea/tea\"\nstrip_prefix = \"v\"\n\n# These assets fit this machine too: tea-0.16.0-linux-amd64\n# Choose one with --asset.\n[[artifact]]\nmatch = { os = \"linux\", arch = \"amd64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-amd64.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-amd64.xz.sha256\"\nbin = [\"tea\"]\n\n[[artifact]]\nmatch = { os = \"darwin\", arch = \"amd64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-darwin-amd64.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-darwin-amd64.xz.sha256\"\nbin = [\"tea\"]\n\n[[artifact]]\nmatch = { os = \"windows\", arch = \"amd64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-windows-amd64.exe.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-windows-amd64.exe.xz.sha256\"\nbin = [\"tea.exe\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"arm64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-arm64.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-arm64.xz.sha256\"\nbin = [\"tea\"]\n\n[[artifact]]\nmatch = { os = \"darwin\", arch = \"arm64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-darwin-arm64.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-darwin-arm64.xz.sha256\"\nbin = [\"tea\"]\n\n[[artifact]]\nmatch = { os = \"windows\", arch = \"arm64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-windows-arm64.exe.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-windows-arm64.exe.xz.sha256\"\nbin = [\"tea.exe\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"arm\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-arm-7.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-arm-7.xz.sha256\"\nbin = [\"tea\"]\n"
+manifest = "[package]\nname = \"tea\"\nhomepage = \"https://gitea.com/gitea/tea\"\n\n[version]\nfrom = \"gitea-releases\"\nrepo = \"gitea.com/gitea/tea\"\nstrip_prefix = \"v\"\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"amd64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-amd64.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-amd64.xz.sha256\"\nbin = [\"tea\"]\n\n[[artifact]]\nmatch = { os = \"darwin\", arch = \"amd64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-darwin-amd64.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-darwin-amd64.xz.sha256\"\nbin = [\"tea\"]\n\n[[artifact]]\nmatch = { os = \"windows\", arch = \"amd64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-windows-amd64.exe.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-windows-amd64.exe.xz.sha256\"\nbin = [\"tea.exe\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"arm64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-arm64.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-arm64.xz.sha256\"\nbin = [\"tea\"]\n\n[[artifact]]\nmatch = { os = \"darwin\", arch = \"arm64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-darwin-arm64.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-darwin-arm64.xz.sha256\"\nbin = [\"tea\"]\n\n[[artifact]]\nmatch = { os = \"windows\", arch = \"arm64\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-windows-arm64.exe.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-windows-arm64.exe.xz.sha256\"\nbin = [\"tea.exe\"]\n\n[[artifact]]\nmatch = { os = \"linux\", arch = \"arm\" }\nurl = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-arm-7.xz\"\nsha256_url = \"https://gitea.com/gitea/tea/releases/download/{{tag}}/tea-{{version}}-linux-arm-7.xz.sha256\"\nbin = [\"tea\"]\n"
 
 [package.platform]
 [package.platform.linux-amd64-glibc]
 strategy = 'artifact'
 url = 'https://gitea.com/gitea/tea/releases/download/v0.16.0/tea-0.16.0-linux-amd64.xz'
 sha256 = '92e0c966c98be0c6ca4c80b1912d08ff7887c7cb55e123542fa541842d875149'
+
+[[package]]
+name = 'throne'
+ref = './packages/throne.toml'
+manifest_sha256 = 'bb852d6f3787219a60ff1e8d6ae0fabb085f82adfd8a1e77eff168d344e3fd5b'
+version = '1.3.1'
+
+[package.platform]
+[package.platform.linux-amd64-glibc]
+strategy = 'artifact'
+url = 'https://github.com/throneproj/Throne/releases/download/1.3.1/Throne-1.3.1-linux-amd64.zip'
+sha256 = '1234162001dcc33d67b93702b269a8bea8627ceedd9700cefe04b04fc68abdd4'

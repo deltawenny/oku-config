@@ -1,0 +1,7 @@
+[packages]
+# CLI
+tea = "gitea:gitea.com/gitea/tea"
+repomix = "npm:repomix"
+
+# GUI
+throne = "../packages/throne.toml"
